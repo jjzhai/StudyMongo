@@ -29,3 +29,14 @@ printjson(result);
 //测试执行结果
 var cursor = db.insert_test.find({});
 printjson(cursor.toArray());
+
+//执行删除操作
+print("======使用remove函数来删除集合中的数据======");
+var result = db.insert_test.remove({name:"xiaoli"});
+
+//打印函数返回的结果
+printjson(result);
+
+//测试执行结果
+var curson = db.insert_test.find({});
+printjson(curson.toArray());
