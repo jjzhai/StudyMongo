@@ -21,13 +21,13 @@ var doc1 =
 
 //执行插入操作
 print("====writeConcern的使用-非确认式写入====");
-var result = db.writeconcern_test.insert(doc1,{sriteConcern:{w:0}});
+var result = db.writeconcern_test.insert(doc1,{writeConcern:{w:0}});
 printjson(result);
 
 print("====writeConcern的使用-确认式写入====");
-var result = db.writeconcern_test.insert(doc1,{sriteConcern:{w:1}});
+var result = db.writeconcern_test.insert(doc1,{writeConcern:{w:1}});
 printjson(result);
 
 print("====writeConcern的使用-确认式写入+journaled+wtimeout====");
-var result = db.writeconcern_test.insert(doc1,{sriteConcern:{w:1,j:true,wtimeout:5}});
+var result = db.writeconcern_test.insert(doc1,{writeConcern:{w:1,j:true,wtimeout:5}});
 printjson(result);
